@@ -21,7 +21,8 @@ script:
   - black --check .
   - flake8 .
   - python manage.py migrate
-  - coverage run --source=accounts,trees,treestagram manage.py test
+  - coverage run --source=accounts,caretaker,chat,posts,trees,treestagram manage.py test
+  # - coverage run --source=accounts,trees,treestagram,caretaker,posts manage.py test # This is the old one
 
 after_success:
   - coveralls
@@ -51,8 +52,8 @@ deploy:
 # deploy:
 #   provider: elasticbeanstalk
 #   region: us-east-1
-#   app: treestagram8
-#   env: treestagram-env8
+#   app: treestagram11
+#   env: treestagram-env11
 #   bucket_name: elasticbeanstalk-us-east-1-180382394287-1
 #   access_key_id: $AWS_ACCESS_KEY_ID
 #   secret_access_key: $AWS_SECRET_ACCESS_KEY
@@ -68,6 +69,32 @@ deploy:
 #   app: treestagram
 #   env: treestagram-env
 #   bucket_name: elasticbeanstalk-us-east-1-563336977573
+#   access_key_id: $AWS_ACCESS_KEY_ID
+#   secret_access_key: $AWS_SECRET_ACCESS_KEY
+#   on:
+#     branch: develop 
+
+# Faiz's ------------------------------------------
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-1
+#   app: treestagramf5
+#   env: treestagram-envf5
+#   bucket_name: elasticbeanstalk-us-east-1-321495243079
+#   access_key_id: $AWS_ACCESS_KEY_ID
+#   secret_access_key: $AWS_SECRET_ACCESS_KEY
+#   on:
+#     branch: develop 
+
+# Adhyayan's ------------------------------------------
+
+# deploy:
+#   provider: elasticbeanstalk
+#   region: us-east-1
+#   app: treestagrama1
+#   env: treestagram-enva1
+#   bucket_name: elasticbeanstalk-us-east-1-227176596642
 #   access_key_id: $AWS_ACCESS_KEY_ID
 #   secret_access_key: $AWS_SECRET_ACCESS_KEY
 #   on:
